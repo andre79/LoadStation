@@ -1,0 +1,5 @@
+﻿  Source.cpp
+c:\users\funceme\documents\visual studio 2015\projects\linkedlisttemplate\loadstation\loadstation\source.cpp(24): warning C4101: 'pFile': unreferenced local variable
+c:\users\funceme\documents\visual studio 2015\projects\linkedlisttemplate\loadstation\loadstation\source.cpp(25): warning C4101: 'buffer': unreferenced local variable
+  LoadStation.vcxproj -> C:\Users\funceme\Documents\Visual Studio 2015\Projects\LinkedListTemplate\LoadStation\Debug\LoadStation.exe
+  LoadStation.vcxproj -> C:\Users\funceme\Documents\Visual Studio 2015\Projects\LinkedListTemplate\LoadStation\Debug\LoadStation.pdb (Partial PDB)

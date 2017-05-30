@@ -1,0 +1,8 @@
+﻿  Source.cpp
+Source.cpp(24): warning C4101: 'pFile': unreferenced local variable
+Source.cpp(25): warning C4101: 'buffer': unreferenced local variable
+  Generating code
+  All 641 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  LoadStation.vcxproj -> C:\Users\funceme\Documents\Visual Studio 2015\Projects\LinkedListTemplate\LoadStation\Release\LoadStation.exe
+  LoadStation.vcxproj -> C:\Users\funceme\Documents\Visual Studio 2015\Projects\LinkedListTemplate\LoadStation\Release\LoadStation.pdb (Full PDB)
