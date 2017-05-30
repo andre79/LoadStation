@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <iomanip>
 #include <experimental/filesystem>
 
 namespace fs = std::experimental::filesystem;
@@ -108,6 +109,13 @@ void get_options(int argc,
 	}
 }
 
+std::size_t number_of_files_in_directory(fs::path path)
+{
+	using fs::directory_iterator;
+	using fp = bool(*)(const fs::path&);
+	return std::count_if(directory_iterator(path), directory_iterator{}, (fp)fs::is_regular_file);
+}
+
 int main(int argc, char *argv[])
 {
 	std::string directory{};
@@ -115,9 +123,17 @@ int main(int argc, char *argv[])
 	get_options(argc, argv, directory, outputfile);
 	std::ifstream read;
 	std::ofstream write(outputfile, std::ofstream::out);
+	std::size_t total = number_of_files_in_directory(directory);
+	std::size_t current = 0;
 	for (auto& p : fs::directory_iterator(directory))
 	{
 		std::string name = fs::path(p).filename().generic_string();
+		double percent = double(++current) / double(total);
+		std::cout << name 
+				  << std::setw(10) << " - "
+				  << percent * 100.0 << " %"
+			      << "\n";
+		std::cout.flush();
 		read.open(fs::path(p));
 		if (read.is_open()) 
 		{
@@ -134,5 +150,7 @@ int main(int argc, char *argv[])
 			}
 		}
 		read.close();
+				
 	}
+	std::cout << "\n";
 }
