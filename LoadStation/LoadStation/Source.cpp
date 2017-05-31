@@ -7,8 +7,9 @@
 #include <experimental/filesystem>
 
 namespace fs = std::experimental::filesystem;
-
 using VectorOfString = std::vector<std::string>;
+
+//Usar sempre ./ para identificar diretorio local. Ex: LoadStation.exe -d ./here -o output.txt
 
 VectorOfString explode(const std::string& s, 
 					   const char& c)
